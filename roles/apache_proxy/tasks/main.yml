@@ -1,5 +1,5 @@
 ---
-# tasks file for apache_backend
+# tasks file for apache_proxy
 - name: install apache
   yum:
     name: httpd
