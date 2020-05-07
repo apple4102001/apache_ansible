@@ -1,0 +1,27 @@
+---
+# tasks file for apache_backend
+- name: install apache
+  yum:
+    name: httpd
+    state: present
+  notify: enable httpd
+
+- name: open ports in firewalld
+  firewalld:
+    port: "{{ item }}/tcp"
+    permanent: yes
+    immediate: yes
+    state: enabled
+  loop: "{{ ports }}"
+
+- name: configure apache
+  template:
+    src: httpd.j2
+    dest: "/etc/httpd/conf/httpd.conf"
+  notify: restart httpd
+
+- name: Set httpd_can_network_connect flag on and keep it persistent across reboots
+  seboolean:
+    name: httpd_can_network_connect
+    state: yes
+    persistent: yes
