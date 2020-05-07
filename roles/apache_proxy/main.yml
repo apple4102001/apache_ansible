@@ -1,0 +1,10 @@
+---
+# handlers file for apache_backend
+- name: restart httpd
+  service:
+    name: httpd
+    state: restarted
+- name: enable httpd
+  service:
+    name: httpd
+    enabled: yes
