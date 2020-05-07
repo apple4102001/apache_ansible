@@ -1,0 +1,13 @@
+---
+- hosts: apache_backend
+  become: yes
+  vars_files:
+    - group_vars/apache_backend.yml
+  roles:
+    - apache_backend
+- hosts: apache_proxy
+  become: yes
+  vars_files:
+    - group_vars/apache_proxy.yml
+  roles:
+    - apache_proxy
