@@ -1,0 +1,10 @@
+---
+# defaults file for apache_backend
+ServerRoot: "/etc/httpd"
+ServerAdmin: root@localhost
+ServerName: www.example.com
+User: apache
+Group: apache
+DocumentRoot: "/var/www/html"
+AllowOverride: None
+ScriptAlias: "/var/www/cgi-bin/"
