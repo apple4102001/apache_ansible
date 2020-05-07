@@ -1,0 +1,9 @@
+---
+ports:
+  - 80
+vhost:
+  method: bytraffic
+  balancer: cluster
+  proxy_pass: "/"
+   
+   
