@@ -1,0 +1,21 @@
+---
+ports:
+  - 80
+  - 8080
+modules:
+ - identifier: cgid_module
+   file_name: mod_cgid.so
+   #vhosts:
+   #  - sockets:
+   #     - "*:80"
+   #     - "*:8080"
+   #    DocumentRoot: "/www"
+   #    Servername: www1.example.com
+   #  - sockets:
+   #     - "127.0.0.1:80"
+   #     - "127.0.0.1:8080"
+   #    DocumentRoot: "/www/html"
+   #    Servername: www2.example.com
+   #
+   #
+   #
